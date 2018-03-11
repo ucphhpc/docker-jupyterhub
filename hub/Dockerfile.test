@@ -3,5 +3,8 @@ COPY tests /app/tests
 
 WORKDIR /app/tests
 
+RUN pip install -r requirements.txt \
+    && chmod +x test.sh
+
 CMD ["bin/bash"]
 ENTRYPOINT ["/app/tests/test.sh"]
