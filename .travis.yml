@@ -1,0 +1,19 @@
+sudo: required
+dist: trusty
+services: docker
+env:
+  global:
+  - IMAGE_NAME=nielsbohr/jupyterhub
+  - IMAGE_VERS=edge
+before_install:
+  - docker build -t "${IMAGE_NAME}":"${IMAGE_VERS}" -f hub/Dockerfile hub/
+  - docker build -t "${IMAGE_NAME}":"${IMAGE_VERS}"-test -f hub/Dockerfile.test hub/
+script:
+  - docker run "${IMAGE_NAME}":"${IMAGE_VERS}"-test
+before_deploy:
+  - docker build -t "${IMAGE_NAME}":latest -f hub/Dockerfile hub/
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master

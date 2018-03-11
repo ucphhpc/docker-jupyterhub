@@ -1,0 +1,7 @@
+FROM nielsbohr/jupyterhub:edge
+COPY tests /app/tests
+
+WORKDIR /app/tests
+
+CMD ["bin/bash"]
+ENTRYPOINT ["/app/tests/test.sh"]
