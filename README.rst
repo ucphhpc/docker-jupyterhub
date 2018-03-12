@@ -28,7 +28,7 @@ A container should now be running locally, double check with::
 
 If the container is present, you should now be able to connect to it in your
 browser @ 127.0.0.1:8000, double check by getting the log output from the
-jupyterhub service
+jupyterhub service::
 
     docker logs jupyterhub
 
