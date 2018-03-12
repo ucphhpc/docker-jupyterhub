@@ -50,6 +50,6 @@ Two images should now have been built, i.e. 'nielsbohr/jupyterhub:edge' and
 
 The test image is an extended version of the nielsbohr/jupyterhub:edge image
 but a test script that verifies that the jupyterhub server is able to launch
- correctly. This test can be run by simply running::
+correctly. This test can be run by simply running::
 
     docker run nielsbohr/jupyterhub:edge-test
