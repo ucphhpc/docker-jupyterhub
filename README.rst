@@ -40,14 +40,12 @@ for more information on this.
 Testing Build
 -------------
 
-To also build and verify the image works in one go the following can be done
- instead
+To also build and verify the image works in one go the following can be done instead::
 
     cd hub
     ./build.sh
 
-Two images should now have been built, i.e.
-'nielsbohr/jupyterhub:edge' and
+Two images should now have been built, i.e. 'nielsbohr/jupyterhub:edge' and
 'nielsbohr/jupyterhub:edge-test'
 
 The test image is an extended version of the nielsbohr/jupyterhub:edge image
