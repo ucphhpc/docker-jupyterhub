@@ -1,4 +1,4 @@
-FROM nielsbohr/jupyterhub:edge
+FROM nielsbohr/jupyterhub:devel
 COPY tests /app/tests
 
 WORKDIR /app/tests

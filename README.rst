@@ -1,4 +1,4 @@
-.. image:: https://travis-ci.org/rasmunk/docker-nbi-jupyterhub.svg?branch=master
+.. image:: https://travis-ci.org/rasmunk/docker-nbi-jupyterhub.svg?branch=devel
     :target: https://travis-ci.org/rasmunk/docker-nbi-jupyterhub
 
 =============================
