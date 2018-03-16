@@ -1,6 +1,6 @@
 # Extension of jupyterhub
 
-FROM jupyterhub/jupyterhub:0.7.2
+FROM jupyterhub/jupyterhub:0.8.1
 
 MAINTAINER Rasmus Munk <rasmus.munk@nbi.ku.dk>
 
