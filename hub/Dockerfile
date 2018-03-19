@@ -17,6 +17,8 @@ RUN git clone https://github.com/rasmunk/SwarmSpawner.git --single-branch --bran
     && pip install -r requirements/base.txt \
     && python setup.py install
 
-RUN pip install python-dateutil
+RUN pip install python-dateutil \
+    jupyterhub-dummyauthenticator \
+    dockerspawner
 
 CMD jupyterhub --debug
