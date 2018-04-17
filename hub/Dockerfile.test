@@ -1,4 +1,4 @@
-FROM nielsbohr/jupyterhub:devel
+FROM nielsbohr/jupyterhub:devel-local
 COPY tests /app/tests
 
 WORKDIR /app/tests
