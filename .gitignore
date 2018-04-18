@@ -102,3 +102,6 @@ ENV/
 
 .idea/
 .DS_Store
+
+jupyterhub.sqlite
+jupyterhub_cookie_secret
