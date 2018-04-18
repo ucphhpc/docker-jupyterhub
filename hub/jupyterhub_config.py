@@ -2,6 +2,11 @@ c = get_config()
 
 c.JupyterHub.spawner_class = 'mig.SwarmSpawner'
 
+c.JupyterHub.ip = '0.0.0.0'
+c.JupyterHub.hub_ip = '0.0.0.0'
+
+c.SwarmSpawner.start_timeout = 60 * 5
+c.SwarmSpawner.slow_spawn_timeout = 5
 # # The name of the service that's running the hub
 c.SwarmSpawner.jupyterhub_service_name = "jupyterhub"
 #
@@ -18,7 +23,13 @@ c.SwarmSpawner.dockerimages = [
     {'image': 'jupyter/base-notebook:30f16d52126f',
      'name': 'Minimal jupyter notebook',
      'mounts': []},
+    {'image': 'jupyter/scipy-notebook',
+     'name': 'scipy-notebook'}
 ]
+
+c.SwarmSpawner.container_spec = {
+    'args': ['/usr/local/bin/start-singleuser.sh']
+}
 
 c.JupyterHub.authenticator_class = 'dummyauthenticator.DummyAuthenticator'
 c.JupyterHub.password = "password"
