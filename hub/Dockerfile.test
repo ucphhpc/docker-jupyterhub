@@ -1,4 +1,5 @@
 FROM nielsbohr/jupyterhub:edge
+
 COPY tests /app/tests
 
 WORKDIR /app/tests
