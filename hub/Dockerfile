@@ -34,7 +34,7 @@ COPY pages $NEW_PAGES_DIR
 RUN cp -r $NEW_PAGES_DIR/templates/* $JHUB_DIR/templates/ \
     && cp -r $NEW_PAGES_DIR/static/* $JHUB_DIR/static/
 
-# Correct timezone
+# TODO -> move out as run param
 RUN ln -fs /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
