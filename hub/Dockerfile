@@ -4,6 +4,11 @@ FROM jupyterhub/jupyterhub:0.8.1
 
 MAINTAINER Rasmus Munk <rasmus.munk@nbi.ku.dk>
 
+RUN apt-get update && apt-get install --no-install-recommends -yq \
+    tzdata \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 ENV JHUB_DIR=/opt/conda/share/jupyter/hub
 ENV NEW_PAGES_DIR=/srv/jupyterhub/pages
 
