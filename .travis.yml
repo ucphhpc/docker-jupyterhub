@@ -1,7 +1,6 @@
 sudo: required
 dist: trusty
 services: docker
-notifications: slack: raz-s:se1PurXsQJv03nBZa9XWMOOS
 before_install:
 - sudo apt-get update
 - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
@@ -23,3 +22,5 @@ deploy:
   script: bash docker_push
   on:
     branch: master
+notifications: 
+  slack: raz-s:se1PurXsQJv03nBZa9XWMOOS
