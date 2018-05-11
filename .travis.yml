@@ -22,3 +22,5 @@ deploy:
   script: bash docker_push
   on:
     branch: devel
+notifications: 
+  slack: raz-s:se1PurXsQJv03nBZa9XWMOOS
