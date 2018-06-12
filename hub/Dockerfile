@@ -34,4 +34,4 @@ COPY pages $NEW_PAGES_DIR
 RUN cp -r $NEW_PAGES_DIR/templates/* $JHUB_DIR/templates/ \
     && cp -r $NEW_PAGES_DIR/static/* $JHUB_DIR/static/
 
-CMD jupyterhub --debug
+CMD jupyterhub
