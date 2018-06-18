@@ -28,7 +28,6 @@ RUN git clone https://github.com/rasmunk/SwarmSpawner.git --single-branch --bran
 RUN pip install python-dateutil \
     jupyterhub-dummyauthenticator
 
-COPY jupyterhub_config.py /srv/jupyterhub/jupyterhub_config.py
 COPY pages $NEW_PAGES_DIR
 
 RUN cp -r $NEW_PAGES_DIR/templates/* $JHUB_DIR/templates/ \
