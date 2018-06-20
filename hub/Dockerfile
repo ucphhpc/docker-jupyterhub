@@ -15,8 +15,8 @@ ENV NEW_PAGES_DIR=/srv/jupyterhub/pages
 # Remote user authenticator with support for MIG mount
 # SwarmSpawner with support for sshfs mount
 # dateutil for cull_idle_servers
-RUN git clone https://github.com/rasmunk/jhub_remote_auth_mount.git --single-branch
---branch devel \
+RUN git clone https://github.com/rasmunk/jhub_remote_auth_mount.git \
+    --single-branch --branch devel \
     && cd jhub_remote_auth_mount \
     && pip install -r requirements.txt \
     && python setup.py install
