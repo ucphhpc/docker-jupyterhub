@@ -7,7 +7,7 @@ docker-nbi-jupyterhub
 
 A jupyterhub docker image that by default supports the following extensions.
 
-- `Jupyterhub REMOTE_USER Authenticator <https://github.com/rasmunk/jhub_remote_user_auth_mig_mount>`_
+- `Jupyterhub REMOTE_USER Authenticator <https://github.com/rasmunk/jhub_remote_auth_mount>`_
 - `MiG SwarmSpawner <https://github.com/rasmunk/SwarmSpawner>`_
 
 -----------
