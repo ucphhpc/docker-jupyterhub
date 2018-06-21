@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install --no-install-recommends -yq \
 ENV JHUB_DIR=/opt/conda/share/jupyter/hub
 ENV NEW_PAGES_DIR=/srv/jupyterhub/pages
 
-# Remote user authenticator with support for MIG mount
+# Remote user authenticator with support for mount http header
 # SwarmSpawner with support for sshfs mount
 # dateutil for cull_idle_servers
 RUN git clone https://github.com/rasmunk/jhub_remote_auth_mount.git \
@@ -27,7 +27,8 @@ RUN git clone https://github.com/rasmunk/SwarmSpawner.git --single-branch --bran
     && python setup.py install
 
 RUN pip install python-dateutil \
-    jupyterhub-dummyauthenticator
+    jupyterhub-dummyauthenticator \
+    dockerspawner
 
 COPY pages $NEW_PAGES_DIR
 
