@@ -5,7 +5,7 @@ c.JupyterHub.spawner_class = 'mig.SwarmSpawner'
 c.JupyterHub.ip = '0.0.0.0'
 c.JupyterHub.hub_ip = '0.0.0.0'
 
-c.SwarmSpawner.start_timeout = 60 * 5
+c.SwarmSpawner.start_timeout = 60 * 10
 # # The name of the service that's running the hub
 c.SwarmSpawner.jupyterhub_service_name = "jupyterhub"
 #

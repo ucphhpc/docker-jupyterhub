@@ -1,6 +1,6 @@
 # Extension of jupyterhub
 
-FROM jupyterhub/jupyterhub:0.9.0
+FROM jupyterhub/jupyterhub:0.9.1
 
 MAINTAINER Rasmus Munk <rasmus.munk@nbi.ku.dk>
 
@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install --no-install-recommends -yq \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-ENV JHUB_DIR=/opt/conda/share/jupyter/hub
+ENV JHUB_DIR=/opt/conda/share/jupyterhub
 ENV NEW_PAGES_DIR=/srv/jupyterhub/pages
 
 # Remote user authenticator with support for mount http header
