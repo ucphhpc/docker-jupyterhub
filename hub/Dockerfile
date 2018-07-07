@@ -23,7 +23,7 @@ RUN git clone https://github.com/rasmunk/jhub_remote_auth_mount.git \
 
 RUN git clone https://github.com/rasmunk/SwarmSpawner.git --single-branch --branch devel \
     && cd SwarmSpawner \
-    && pip install -r requirements/base.txt \
+    && pip install -r requirements.txt \
     && python setup.py install
 
 RUN pip install python-dateutil \

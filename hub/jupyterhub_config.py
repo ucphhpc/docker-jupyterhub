@@ -17,13 +17,8 @@ c.SwarmSpawner.networks = ["jh_test"]
 c.SwarmSpawner.use_user_options = True
 
 c.SwarmSpawner.dockerimages = [
-    {'image': 'jupyterhub/singleuser:0.8.1',
-     'name': 'Default jupyterhub singleuser notebook'},
-    {'image': 'jupyter/base-notebook:30f16d52126f',
-     'name': 'Minimal jupyter notebook',
-     'mounts': []},
-    {'image': 'jupyter/scipy-notebook',
-     'name': 'scipy-notebook'}
+    {'image': 'nielsbohr/base-notebook-devel:743fe46511dc',
+     'name': 'Basic Python Notebook'},
 ]
 
 c.SwarmSpawner.container_spec = {
