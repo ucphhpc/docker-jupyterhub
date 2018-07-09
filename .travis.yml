@@ -9,7 +9,7 @@ env:
   - COMMIT=${TRAVIS_COMMIT::12}
   - IMAGE_NAME=nielsbohr/jupyterhub
   - PRE_VERS=edge
-  - IMAGE_VERS="${COMMIT}"
+  - IMAGE_VERS=update_pages
   - secure: NPb1WM9l+TpKcIs2T5m5wkZE/powbQ8xhZgG0Fh/iiJ2sXuHLJ12yGbea8FpJR3ekwTtAlFOAT47Fzb5ULapY7vKoEGs6lAw1Rv4/bsHzw2t95EuD+F6A6tr9tmsnj8kFmbx8HWn0J92ju1LmzdiOnmeTB2hT3va6MV7wBV4tD6NQ6l6GHK13KWJdqZldhFxHzfIf0rwtqB4Xx8zN8pVCqOnQPOV9Jx24qoMydaQ+FUw8gg1sgbwc4ekQ9GdoE7MR1baJgKLiOUt9ffiffVgSwkD4dP2RnidXztmwoJJkpGgLtPHEwEqq78x0f3HR/SqjNucRfW1TgPWrYHHa3kvC+68tVOgcJc3YKPF3NE7+GuAeN8Aryhf2xRPc/Dug6QAxMyP2DBT5sb4FOlbA4jfuIrDEZCMyyHhs0b+a7WX8sJnO0+AKJapgAjdsAEb5WafVz3Ty4Wmt3ITcKzjlSs4mhoDj7VLD9xF48wQk+XUuBENJM4ZrzpWXEqkpSGjIpIiSUQyVntfJAWLQ79yaqGiGfnthmLl6UPhNQ9phA5vKB9XD7OaJizt5A506Lst5gZmhKVmsp4dq/t28K6Q1PWLMBDzm4VNwbpuky3eOq8Jr1iELL1FCN4W8esvbaQwPJLy/ziD2oLAZoHdWiNj+HA75O5XOdcDiXBITiiSVK69304=
   - secure: UhSNFT2URRxmPqbsCOyT9ODxPa/w9Z9Za4invUKb8CrEW45puFHOimMLOloir5iXX1MaZ6iJ6g22ARL6F10Q5vfe5PC1NOoyXiKMwb5+jzed8XGtLoAuPttjxgolNNjhY9Pl5e05JyNXrxuqD8gOAoM3cED1cMYmRgpOHvmqhVZ4S7RE96mklBmKlzaYmCvdcYWAfenuStD9aunLagky7/0EG5204RpjT2kdD9QG1YuscVqJbwjZ1byyGzsTv/zjYF5be/2oC/HV41h+xz8nJW2hQii7F/NlTaUzO8Kv0h4PmKUmIbW0I4JBPK8LdC5zozm8mDCIy7K//wrVsl94bNawI9jVnfb/6IQDdpL3TsqOjT4/dXpR+Mx3goQu4C3teqZKD8N5s9TNJGlG+HS2UsQ22iNWyyklAgxJrxPKDSvLgpLkJx36bZl5fQ1lhJRAuJ3oGTlAg6uiXdFn3dILNk4egOp64bLG+ke3uWQ9bkApADBXnQCjGe/O3DT6OHtYAtFf/BtpR5c3fazcXXcITjY8iMwFHSFtQiznULi9Jm2g1iCWMlKTOstOxflJco3Dt5FCX+RSZvMua+Vy3t4RZj5H1NAFF+qXavzK6l804KBv7jne9ikku/CxMl2Q64xoWsWYmzVsBl7pVpgBQVVZBa96r/xNbuD80Z2TVnuMbdQ=
 before_install:
@@ -23,6 +23,6 @@ deploy:
   provider: script
   script: bash docker_push
   on:
-    branch: devel
+    branch: update_pages
 notifications: 
   slack: raz-s:se1PurXsQJv03nBZa9XWMOOS

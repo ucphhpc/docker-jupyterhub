@@ -1,4 +1,7 @@
 {% extends "page.html" %}
+{% if announcement_login %}
+  {% set announcement = announcement_login %}
+{% endif %}
 
 {% block login_widget %}
 {% endblock %}
@@ -69,8 +72,7 @@
 {% endblock %}
 
 {% block script %}
-{{super()}}
-
+{{ super() }}
 <script>
 if (window.location.protocol === "http:") {
   // unhide http warning

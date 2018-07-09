@@ -11,14 +11,14 @@ c.SwarmSpawner.jupyterhub_service_name = "jupyterhub"
 c.SwarmSpawner.start_timeout = 60 * 10
 
 # The name of the overlay network that everything's connected to
-c.SwarmSpawner.networks = ["jh_test"]
+c.SwarmSpawner.networks = ["bridge"]
 
 # Before the user can select which image to spawn,
 # user_options has to be enabled
 c.SwarmSpawner.use_user_options = True
 
 c.SwarmSpawner.dockerimages = [
-    {'image': 'nielsbohr/base-notebook-devel:743fe46511dc',
+    {'image': 'nielsbohr/base-notebook:devel',
      'name': 'Basic Python Notebook'}
 ]
 
