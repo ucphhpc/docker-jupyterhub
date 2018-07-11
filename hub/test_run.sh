@@ -1,3 +1,4 @@
+docker network rm jh_test
 docker network create jh_test
 docker pull nielsbohr/base-notebook:devel
 docker run --mount type=bind,src=$(pwd)/jupyterhub_config.py,dst=/etc/jupyterhub/jupyterhub_config.py \

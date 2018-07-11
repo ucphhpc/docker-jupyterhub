@@ -23,11 +23,7 @@ require(["jquery", "jhapi"], function($, JHAPI) {
           .text("Start My Server")
           .attr("title", "Start your server")
           .attr("disabled", false)
-          .off("click")
-          .click(function() {
-            $("#loading-text").text("Your notebook is now being started ...");
-            $("#loading-container").show();
-        });
+          .off("click");
         $('#loading-container').hide();
         $("#stop").hide();
       }

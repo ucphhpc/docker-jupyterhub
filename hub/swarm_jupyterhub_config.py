@@ -1,17 +1,17 @@
 # Example config
 c = get_config()
 
+c.JupyterHub.ip = '0.0.0.0'
 c.JupyterHub.hub_ip = '0.0.0.0'
-
 c.JupyterHub.spawner_class = 'mig.SwarmSpawner'
 
 # The name of the service that's running the hub
 c.SwarmSpawner.jupyterhub_service_name = "jupyterhub"
 
-c.SwarmSpawner.start_timeout = 60 * 10
+c.SwarmSpawner.start_timeout = 60 * 15
 
 # The name of the overlay network that everything's connected to
-c.SwarmSpawner.networks = ["bridge"]
+c.SwarmSpawner.networks = ["jh_test"]
 
 # Before the user can select which image to spawn,
 # user_options has to be enabled
