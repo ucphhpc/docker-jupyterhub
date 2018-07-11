@@ -15,13 +15,20 @@ require(["jquery", "jhapi"], function($, JHAPI) {
       .click(function() {
         return false;
       });
+    $("#loading-text").text("Your notebook is now being removed ...");
+    $('#loading-container').show();
     api.stop_server(user, {
       success: function() {
         $("#start")
           .text("Start My Server")
           .attr("title", "Start your server")
           .attr("disabled", false)
-          .off("click");
+          .off("click")
+          .click(function() {
+            $("#loading-text").text("Your notebook is now being started ...");
+            $("#loading-container").show();
+        });
+        $('#loading-container').hide();
         $("#stop").hide();
       }
     });
