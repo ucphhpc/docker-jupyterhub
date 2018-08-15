@@ -30,7 +30,7 @@
     <title>{% block title %}JupyterHub{% endblock %}</title>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     {% block stylesheet %}
     <link rel="stylesheet" href="{{ static_url("css/style.min.css") }}" type="text/css"/>
     {% endblock %}
@@ -57,13 +57,23 @@
           }
       });
     </script>
-    
+
     <script type="text/javascript">
       window.jhdata = {
         base_url: "{{base_url}}",
         prefix: "{{prefix}}",
         {% if user %}
         user: "{{user.name}}",
+        {% endif %}
+        {% if admin_access %}
+        admin_access: true,
+        {% else %}
+        admin_access: false,
+        {% endif %}
+        {% if not no_spawner_check and user and user.spawner.options_form %}
+        options_form: true,
+        {% else %}
+        options_form: false,
         {% endif %}
       }
     </script>
@@ -82,7 +92,8 @@
   </div>
 </noscript>
 
-<nav class="navbar navbar-default">
+{% block nav_bar %}
+  <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
         <span id="jupyterhub-logo" class="pull-left"><a href="{{logo_url or base_url}}"><img src='{{base_url}}logo' alt='JupyterHub' class='jpy-logo' title='Home'/></a></span>
@@ -97,32 +108,47 @@
       <div class="collapse navbar-collapse" id="thenavbar">
         {% if user %}
         <ul class="nav navbar-nav">
-          <li><a href="{{base_url}}home">Home</a></li>
-          <li><a href="{{base_url}}token">Token</a></li>
-          {% if user.admin %}
-          <li><a href="{{base_url}}admin">Admin</a></li>
-          {% endif %}
+          {% block nav_bar_left_items %}
+            <li><a href="{{base_url}}home">Home</a></li>
+            <li><a href="{{base_url}}token">Token</a></li>
+            {% if user.admin %}
+            <li><a href="{{base_url}}admin">Admin</a></li>
+            {% endif %}
+          {% endblock %}
         </ul>
         {% endif %}
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            {% block login_widget %}
-              <span id="login_widget">
-                {% if user %}
-                  <a id="logout" role="button" class="navbar-btn btn-sm btn btn-default" href="{{logout_url}}"> <i aria-hidden="true" class="fa fa-sign-out"></i> Logout</a>
-                {% else %}
-                  <a id="login" role="button" class="btn-sm btn navbar-btn btn-default" href="{{login_url}}">Login</a>
-                {% endif %}
-              </span>
+          {% block nav_bar_right_items %}
+            <li>
+              {% block login_widget %}
+                <span id="login_widget">
+                  {% if user %}
+                    <a id="logout" role="button" class="navbar-btn btn-sm btn btn-default" href="{{logout_url}}"> <i aria-hidden="true" class="fa fa-sign-out"></i> Logout</a>
+                  {% else %}
+                    <a id="login" role="button" class="btn-sm btn navbar-btn btn-default" href="{{login_url}}">Login</a>
+                  {% endif %}
+                </span>
               {% endblock %}
-          </li>
+            </li>
+          {% endblock %}
         </ul>
       </div>
 
-  {% block header %}
-  {% endblock %}
-  </div>
-</nav>
+      {% block header %}
+      {% endblock %}
+    </div>
+  </nav>
+{% endblock %}
+
+
+{% block announcement %}
+{% if announcement %}
+<div class="container text-center announcement">
+  {{ announcement | safe }}
+</div>
+{% endif %}
+{% endblock %}
+
 
 {% block main %}
 {% endblock %}
