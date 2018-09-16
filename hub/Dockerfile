@@ -15,7 +15,7 @@ RUN pip install --upgrade pip
 # SwarmSpawner with support for sshfs mount
 # dateutil for cull_idle_servers
 RUN pip install jhub-authenticators \
-    mig-swarmspawner \
+    jhub-swarmspawner \
     python-dateutil
 
 COPY pages $NEW_PAGES_DIR
