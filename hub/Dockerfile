@@ -16,7 +16,8 @@ RUN pip install --upgrade pip
 # dateutil for cull_idle_servers
 RUN pip install jhub-authenticators \
     jhub-swarmspawner \
-    python-dateutil
+    python-dateutil \
+    flatten_dict
 
 COPY pages $NEW_PAGES_DIR
 
