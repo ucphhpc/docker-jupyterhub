@@ -15,6 +15,7 @@ RUN pip install --upgrade pip
 # SwarmSpawner with support for sshfs mount
 # dateutil for cull_idle_servers
 RUN pip install jhub-authenticators \
+    dockerspawner \
     jhub-swarmspawner \
     python-dateutil \
     flatten_dict
@@ -24,4 +25,4 @@ COPY pages $NEW_PAGES_DIR
 RUN cp -r $NEW_PAGES_DIR/templates/* $JHUB_DIR/templates/ \
     && cp -r $NEW_PAGES_DIR/static/* $JHUB_DIR/static/
 
-CMD jupyterhub
+CMD ["jupyterhub", "-f", "/srv/jupyterhub/jupyter_config.py"]
