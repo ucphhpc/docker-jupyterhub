@@ -20,6 +20,9 @@ RUN pip install jhub-authenticators \
     python-dateutil \
     flatten_dict
 
+# JHUB Hooks
+RUN pip install ldap-hooks
+
 COPY pages $NEW_PAGES_DIR
 
 RUN cp -r $NEW_PAGES_DIR/templates/* $JHUB_DIR/templates/ \

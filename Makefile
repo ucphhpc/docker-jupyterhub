@@ -4,7 +4,7 @@ TAG=edge
 
 .PHONY: build
 
-all: clean build test push
+all: clean build test
 
 build:
 	docker build -t $(OWNER)/$(IMAGE):$(TAG) hub/
