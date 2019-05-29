@@ -4,6 +4,7 @@ MAINTAINER Rasmus Munk <rasmus.munk@nbi.ku.dk>
 
 RUN apt-get update && apt-get install --no-install-recommends -yq \
     tzdata \
+    quota \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
