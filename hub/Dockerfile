@@ -1,5 +1,5 @@
 # Extension of jupyterhub
-FROM jupyterhub/jupyterhub:0.9.2
+FROM jupyterhub/jupyterhub:1.0.0
 MAINTAINER Rasmus Munk <rasmus.munk@nbi.ku.dk>
 
 RUN apt-get update && apt-get install --no-install-recommends -yq \
