@@ -53,3 +53,4 @@ but a test script that verifies that the jupyterhub server is able to launch
 correctly. This test can be run by simply running::
 
     docker run nielsbohr/jupyterhub:edge-test
+
