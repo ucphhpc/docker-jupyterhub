@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.org/rasmunk/docker-nbi-jupyterhub.svg?branch=master
-    :target: https://travis-ci.org/rasmunk/docker-nbi-jupyterhub
+.. image:: https://travis-ci.com/ucphhpc/docker-nbi-jupyterhub.svg?branch=master
+    :target: https://travis-ci.com/ucphhpc/docker-nbi-jupyterhub
 
 =============================
 docker-nbi-jupyterhub
