@@ -1,4 +1,4 @@
-sudo: required
+os: linux
 dist: trusty
 services: docker
 before_install:
@@ -24,5 +24,3 @@ deploy:
   script: bash docker_push
   on:
     branch: master
-notifications: 
-  slack: raz-s:se1PurXsQJv03nBZa9XWMOOS
