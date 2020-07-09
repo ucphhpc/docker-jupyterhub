@@ -54,4 +54,3 @@ correctly. This test can be run by simply running::
 
     docker run nielsbohr/jupyterhub:edge-test
 
-
