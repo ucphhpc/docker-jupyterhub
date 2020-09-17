@@ -1,9 +1,14 @@
-.. image:: https://travis-ci.com/ucphhpc/docker-nbi-jupyterhub.svg?branch=master
-    :target: https://travis-ci.com/ucphhpc/docker-nbi-jupyterhub
-
 =============================
 docker-nbi-jupyterhub
 =============================
+.. image:: https://travis-ci.com/ucphhpc/docker-nbi-jupyterhub.svg?branch=master
+    :target: https://travis-ci.com/ucphhpc/docker-nbi-jupyterhub
+.. image:: https://img.shields.io/docker/v/nielsbohr/jupyterhub
+    :alt: Docker Image Version (latest by date)    
+.. image:: https://img.shields.io/docker/pulls/nielsbohr/jupyterhub
+    :alt: Docker Pulls
+.. image:: https://img.shields.io/docker/image-size/nielsbohr/jupyterhub
+    :alt: Docker Image Size (latest by date)
 
 A jupyterhub docker image that by default supports the following extensions.
 
