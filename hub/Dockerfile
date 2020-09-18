@@ -31,11 +31,6 @@ COPY pages $NEW_PAGES_DIR
 RUN cp -r $NEW_PAGES_DIR/templates/* $JHUB_DIR/templates/ \
     && cp -r $NEW_PAGES_DIR/static/* $JHUB_DIR/static/
 
-ADD multiplespawner /multiplespawner
-
-RUN cd /multiplespawner \
-    && pip3 install .
-
 WORKDIR $JHUB_SRV_DIR
 
 # Create a default config that works without a specific config file
