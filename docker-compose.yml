@@ -14,4 +14,4 @@ services:
 networks:
   default:
     name: jupyterhub_default
-    driver: overlay
+    driver: bridge
