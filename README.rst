@@ -4,14 +4,14 @@ docker-nbi-jupyterhub
 .. image:: https://travis-ci.com/ucphhpc/docker-nbi-jupyterhub.svg?branch=master
     :target: https://travis-ci.com/ucphhpc/docker-nbi-jupyterhub
 
-.. image:: https://img.shields.io/docker/v/nielsbohr/jupyterhub
-    :target: https://hub.docker.com/r/nielsbohr/jupyterhub
+.. image:: https://img.shields.io/docker/v/ucphhpc/jupyterhub
+    :target: https://hub.docker.com/r/ucphhpc/jupyterhub
 
-.. image:: https://img.shields.io/docker/pulls/nielsbohr/jupyterhub
-    :target: https://hub.docker.com/r/nielsbohr/jupyterhub
+.. image:: https://img.shields.io/docker/pulls/ucphhpc/jupyterhub
+    :target: https://hub.docker.com/r/ucphhpc/jupyterhub
 
-.. image:: https://img.shields.io/docker/image-size/nielsbohr/jupyterhub
-    :target: https://hub.docker.com/r/nielsbohr/jupyterhub
+.. image:: https://img.shields.io/docker/image-size/ucphhpc/jupyterhub
+    :target: https://hub.docker.com/r/ucphhpc/jupyterhub
 
 A jupyterhub docker image that by default supports the following extensions.
 
@@ -26,9 +26,9 @@ If you are simply interested in running the jupyterhub, simply run the
 following command inside the repo directory::
 
     cd hub
-    docker build -t nielsbohr/jupyterhub .
+    docker build -t ucphhpc/jupyterhub .
     # To run a single notebook in detached mode do the following
-    docker run -d --name jupyterhub -p 8000:8000 nielsbohr/jupyterhub:edge
+    docker run -d --name jupyterhub -p 8000:8000 ucphhpc/jupyterhub:edge
 
 A container should now be running locally, double check with::
 
@@ -53,13 +53,13 @@ To also build and verify the image works in one go the following can be done ins
     cd hub
     ./build.sh
 
-Two images should now have been built, i.e. 'nielsbohr/jupyterhub:edge' and
-'nielsbohr/jupyterhub:edge-test'
+Two images should now have been built, i.e. 'ucphhpc/jupyterhub:edge' and
+'ucphhpc/jupyterhub:edge-test'
 
-The test image is an extended version of the nielsbohr/jupyterhub:edge image
+The test image is an extended version of the ucphhpc/jupyterhub:edge image
 but a test script that verifies that the jupyterhub server is able to launch
 correctly. This test can be run by simply running::
 
-    docker run nielsbohr/jupyterhub:edge-test
+    docker run ucphhpc/jupyterhub:edge-test
 
 

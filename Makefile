@@ -1,4 +1,4 @@
-OWNER=nielsbohr
+OWNER=ucphhpc
 IMAGE=jupyterhub
 TAG=edge
 ARGS=
