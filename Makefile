@@ -20,7 +20,7 @@ clean:
 
 test:
 	docker build --rm --force-rm -t $(OWNER)/$(IMAGE):$(TAG)-test $(ARGS) -f ./hub/Dockerfile.test ./hub
-	docker run -it $(OWNER)/$(IMAGE):$(TAG)-test
+	docker run $(OWNER)/$(IMAGE):$(TAG)-test
 
 push:
 	docker push ${OWNER}/${IMAGE}:${TAG} $(ARGS)
