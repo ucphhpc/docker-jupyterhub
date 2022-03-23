@@ -5,7 +5,12 @@ ARGS=
 
 .PHONY: build
 
-all: clean build test
+all: clean init build test
+
+init:
+ifeq (,$(wildcard ./.env))
+	ln -s defaults.env .env
+endif
 
 build:
 	docker build -t $(OWNER)/$(IMAGE):$(TAG) $(ARGS) hub/
