@@ -1,4 +1,3 @@
-SHELL:=/bin/bash
 PACKAGE_NAME=jupyterhub
 PACKAGE_NAME_FORMATTED=$(subst -,_,$(PACKAGE_NAME))
 OWNER=ucphhpc
