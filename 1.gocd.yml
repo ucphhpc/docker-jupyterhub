@@ -27,7 +27,7 @@ pipelines:
       IMAGE: docker-jupyterhub
       ARGS: ''
       COMMIT_TAG: GO_REVISION_DOCKER_JUPYTERHUB_GIT
-      DEFAULT_TAG: latest
+      DEFAULT_TAG: 1.5.0
       SRC_DIRECTORY: docker-jupyterhub
       TEST_DIRECTORY: docker-jupyterhub
       PUSH_DIRECTORY: publish-docker-scripts
