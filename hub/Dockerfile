@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install --no-install-recommends -yq \
 # Remote user authenticator with support for mount http header
 # SwarmSpawner with support for sshfs mount
 # dateutil for cull_idle_servers
-RUN python3 -m pip install jhub-authenticators \
+RUN python3 -m pip install jhub-authenticators==0.3.5 \
     dockerspawner \
     jhub-swarmspawner \
     python-dateutil \
