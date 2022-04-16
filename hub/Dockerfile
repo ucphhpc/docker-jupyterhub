@@ -1,5 +1,5 @@
 # Extension of jupyterhub
-FROM jupyterhub/jupyterhub:1.5.0
+FROM jupyterhub/jupyterhub:2.2.2
 LABEL MAINTAINER="Rasmus Munk <rasmus.munk@nbi.ku.dk>"
 
 RUN apt-get update && apt-get install --no-install-recommends -yq \
@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install --no-install-recommends -yq \
 # Remote user authenticator with support for mount http header
 # SwarmSpawner with support for sshfs mount
 # dateutil for cull_idle_servers
-RUN python3 -m pip install jhub-authenticators==0.3.5 \
+RUN python3 -m pip install jhub-authenticators \
     dockerspawner \
     jhub-swarmspawner \
     python-dateutil \
