@@ -103,5 +103,9 @@ ENV/
 .idea/
 .DS_Store
 
+#Ignore vscode files
+.vscode/
+
 jupyterhub.sqlite
 jupyterhub_cookie_secret
+
