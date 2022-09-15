@@ -13,11 +13,10 @@ RUN apt-get update && apt-get install --no-install-recommends -yq \
 # SwarmSpawner with support for sshfs mount
 # https://github.com/jupyterhub/jupyterhub-idle-culler
 # The JupyterHub 2.0 culler
-RUN python3 -m pip install jhub-authenticators \
+RUN python3 -m pip install \
+    git+https://github.com/ucphhpc/jhub-authenticators.git@dev \
     dockerspawner \
-    jhub-swarmspawner \
+    git+https://github.com/ucphhpc/swarmspawner.git@dev \
     flatten_dict \
-    jupyterhub-idle-culler
-
-# JHUB Hooks
-RUN python3 -m pip install ldap-hooks
+    jupyterhub-idle-culler \
+    git+https://github.com/ucphhpc/ldap_hooks.git@dev
