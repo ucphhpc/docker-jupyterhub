@@ -3,15 +3,15 @@ environments:
     environments:
       GIT_USER: "{{SECRET:[github][username]}}"
     pipelines:
-      - docker-jupyterhub
+      - docker-jupyterhub-dev
 pipelines:
-  docker-jupyterhub:
+  docker-jupyterhub-dev:
     group: docker_image
     locking: off
     materials:
-      docker-jupyterhub_git:  # this is the name of material
+      docker-jupyterhub-dev_git:  # this is the name of material
         # says about type of material and url at once
-        name: docker-jupyterhub
+        name: docker-jupyterhub-dev
         git: https://github.com/ucphhpc/docker-jupyterhub.git
         branch: dev
         destination: docker-jupyterhub
