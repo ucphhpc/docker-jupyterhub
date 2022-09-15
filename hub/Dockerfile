@@ -11,12 +11,13 @@ RUN apt-get update && apt-get install --no-install-recommends -yq \
 
 # Remote user authenticator with support for mount http header
 # SwarmSpawner with support for sshfs mount
-# dateutil for cull_idle_servers
+# https://github.com/jupyterhub/jupyterhub-idle-culler
+# The JupyterHub 2.0 culler
 RUN python3 -m pip install jhub-authenticators \
     dockerspawner \
     jhub-swarmspawner \
-    python-dateutil \
-    flatten_dict
+    flatten_dict \
+    jupyterhub-idle-culler
 
 # JHUB Hooks
 RUN python3 -m pip install ldap-hooks
