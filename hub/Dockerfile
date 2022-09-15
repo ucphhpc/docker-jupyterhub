@@ -14,9 +14,9 @@ RUN apt-get update && apt-get install --no-install-recommends -yq \
 # https://github.com/jupyterhub/jupyterhub-idle-culler
 # The JupyterHub 2.0 culler
 RUN python3 -m pip install \
-    git+https://github.com/ucphhpc/jhub-authenticators.git@dev \
+    git+https://github.com/ucphhpc/jhub-authenticators.git \
     dockerspawner \
-    git+https://github.com/ucphhpc/swarmspawner.git@dev \
+    git+https://github.com/ucphhpc/swarmspawner.git \
     flatten_dict \
     jupyterhub-idle-culler \
-    git+https://github.com/ucphhpc/ldap_hooks.git@dev
+    git+https://github.com/ucphhpc/ldap_hooks.git
