@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install --no-install-recommends -yq \
 # The JupyterHub 2.0 culler
 RUN python3 -m pip install jhub-authenticators \
     dockerspawner \
-    jhub-swarmspawner==0.4.5 \
+    jhub-swarmspawner==0.4.6 \
     flatten_dict \
     jupyterhub-idle-culler
 
