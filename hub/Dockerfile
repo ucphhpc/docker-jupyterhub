@@ -17,7 +17,8 @@ RUN python3 -m pip install jhub-authenticators \
     dockerspawner \
     jhub-swarmspawner==0.4.6 \
     flatten_dict \
-    jupyterhub-idle-culler
+    jupyterhub-idle-culler \
+    jupyterhub-announcement
 
 # JHUB Hooks
 RUN python3 -m pip install ldap-hooks
