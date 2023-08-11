@@ -1,5 +1,5 @@
 # Extension of jupyterhub
-FROM jupyterhub/jupyterhub:3.1.1
+FROM jupyterhub/jupyterhub:4.0.1
 LABEL MAINTAINER="Rasmus Munk <rasmus.munk@nbi.ku.dk>"
 
 RUN apt-get update && apt-get install --no-install-recommends -yq \
@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install --no-install-recommends -yq \
 # The JupyterHub 2.0 culler
 RUN python3 -m pip install jhub-authenticators \
     dockerspawner \
-    jhub-swarmspawner==0.4.6 \
+    jhub-swarmspawner \
     flatten_dict \
     jupyterhub-idle-culler \
     jupyterhub-announcement
