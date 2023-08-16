@@ -32,7 +32,7 @@ pipelines:
       ARGS: ''
       DEFAULT_TAG: latest
       COMMIT_TAG: GO_REVISION_DOCKER_JUPYTERHUB_GIT
-      EXTRA_TAG: 3.1.1
+      EXTRA_TAG: 4.0.2
       SRC_DIRECTORY: docker-jupyterhub
       TEST_DIRECTORY: docker-jupyterhub
       PUSH_DIRECTORY: publish-docker-scripts
