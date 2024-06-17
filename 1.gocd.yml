@@ -29,7 +29,8 @@ pipelines:
         destination: publish-docker-scripts
     parameters:
       IMAGE: docker-jupyterhub
-      ARGS: ''
+      BUILD_ARGS: ''
+      TEST_ARGS: ''
       DEFAULT_TAG: latest
       COMMIT_TAG: GO_REVISION_DOCKER_JUPYTERHUB_GIT
       EXTRA_TAG: 4.0.2
