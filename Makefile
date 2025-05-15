@@ -51,6 +51,7 @@ dockerpush:
 daemon:
 	docker stack deploy -c <(${DOCKER_COMPOSE} config) ${SERVICE_NAME} $(ARGS)
 
+.PHONY: daemon-down
 daemon-down:
 	docker stack rm $(SERVICE_NAME)
 
