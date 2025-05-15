@@ -1,18 +1,33 @@
+SHELL=/bin/bash
 PACKAGE_NAME=jupyterhub
-PACKAGE_NAME_FORMATTED=$(subst -,_,$(PACKAGE_NAME))
+PACKAGE_NAME_FORMATTED=$(subst -,_,${PACKAGE_NAME})
 OWNER=ucphhpc
-IMAGE=$(PACKAGE_NAME)
+SERVICE_NAME=${PACKAGE_NAME}
+IMAGE=${PACKAGE_NAME}
+
 # Enable that the builder should use buildkit
 # https://docs.docker.com/develop/develop-images/build_enhancements/
 DOCKER_BUILDKIT=1
-TAG=edge
+# NOTE: dynamic lookup with docker as default and fallback to podman
+DOCKER = $(shell which docker 2>/dev/null || which podman 2>/dev/null)
+# if docker compose plugin is not available, try old docker-compose/podman-compose
+ifeq (, $(shell ${DOCKER} help|grep compose))
+	DOCKER_COMPOSE = $(shell which docker-compose 2>/dev/null || which podman-compose 2>/dev/null)
+else
+	DOCKER_COMPOSE = ${DOCKER} compose
+endif
+$(echo ${DOCKER_COMPOSE} >/dev/null)
+
+-include .env
 ARGS=
 
 .PHONY: all init dockerbuild dockerclean dockerpush clean dist distclean maintainer-clean
 .PHONY: install uninstall installcheck check
 
+.PHONY: all
 all: init dockerbuild
 
+.PHONY: init
 init:
 ifeq ($(shell test -e defaults.env && echo yes), yes)
 ifneq ($(shell test -e .env && echo yes), yes)
@@ -20,15 +35,34 @@ ifneq ($(shell test -e .env && echo yes), yes)
 endif
 endif
 
+.PHONY: dockerbuild
 dockerbuild:
-	@TAG=$(TAG) docker-compose build $(ARGS)
+	${DOCKER} build -f hub/Dockerfile -t $(OWNER)/${IMAGE}:${TAG} ${ARGS} .
 
+.PHONY: dockerclean
 dockerclean:
-	docker rmi -f $(OWNER)/$(IMAGE):$(TAG)
+	${DOCKER} rmi -f $(OWNER)/${IMAGE}:${TAG}
 
+.PHONY: dockerpush
 dockerpush:
-	docker push $(OWNER)/$(IMAGE):$(TAG)
+	${DOCKER} push $(OWNER)/${IMAGE}:${TAG}
 
+.PHONY: deamon
+daemon:
+	docker stack deploy -c <(${DOCKER_COMPOSE} config) ${SERVICE_NAME} $(ARGS)
+
+daemon-down:
+	docker stack rm $(SERVICE_NAME)
+
+.PHONY: up
+up:
+	${DOCKER_COMPOSE} up -d $(ARGS)
+
+.PHONY: down
+down:
+	${DOCKER_COMPOSE} down $(ARGS)
+
+.PHONY: clean
 clean:
 	$(MAKE) dockerclean
 	$(MAKE) distclean
@@ -36,30 +70,11 @@ clean:
 	rm -fr .pytest_cache
 	rm -fr tests/__pycache__
 
-dist:
-### PLACEHOLDER ###
-
-distclean:
-### PLACEHOLDER ###
-
-maintainer-clean:
+.PHONY: maintainer-clean
+maintainer-clean: distclean
 	@echo 'This command is intended for maintainers to use; it'
 	@echo 'deletes files that may need special tools to rebuild.'
 
-install-dep:
-### PLACEHOLDER ###
-
+.PHONY: 
 install:
 	$(MAKE) install-dep
-
-uninstall:
-### PLACEHOLDER ###
-
-uninstallcheck:
-### PLACEHOLDER ###
-
-installcheck:
-### PLACEHOLDER ###
-
-check:
-### PLACEHOLDER ###

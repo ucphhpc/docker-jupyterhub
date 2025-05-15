@@ -1,6 +1,6 @@
 # Extension of jupyterhub
-FROM jupyterhub/jupyterhub:4.0.2
-LABEL MAINTAINER="Rasmus Munk <rasmus.munk@nbi.ku.dk>"
+FROM jupyterhub/jupyterhub:4.1.6
+LABEL MAINTAINER="Rasmus Munk <rasmus.munk@di.ku.dk>"
 
 RUN apt-get update && apt-get install --no-install-recommends -yq \
     tzdata \
