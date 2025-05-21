@@ -1,6 +1,6 @@
 services:
   jupyterhub:
-    image: ucphhpc/jupyterhub:edge
+    image: ucphhpc/jupyterhub:${TAG}
     build:
       context: ./hub
       dockerfile: Dockerfile

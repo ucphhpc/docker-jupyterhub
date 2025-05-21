@@ -1,7 +1,7 @@
 services:
   jupyterhub:
-    image: ucphhpc/jupyterhub:edge
-    
+    image: ucphhpc/jupyterhub:${TAG}
+
     ports:
       - "80:8000/tcp"
     env_file:
