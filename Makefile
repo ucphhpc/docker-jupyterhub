@@ -49,11 +49,11 @@ dockerpush:
 
 .PHONY: deamon
 daemon:
-	docker stack deploy -c <(${DOCKER_COMPOSE} config) ${SERVICE_NAME} $(ARGS)
+	${DOCKER} stack deploy -c docker-compose-swarm.yml ${SERVICE_NAME} $(ARGS)
 
 .PHONY: daemon-down
 daemon-down:
-	docker stack rm $(SERVICE_NAME)
+	${DOCKER} stack rm $(SERVICE_NAME)
 
 .PHONY: up
 up:

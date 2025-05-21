@@ -6,7 +6,7 @@ c.JupyterHub.hub_ip = '0.0.0.0'
 c.JupyterHub.spawner_class = 'jhub.SwarmSpawner'
 
 # The name of the service that's running the hub
-c.SwarmSpawner.jupyterhub_service_name = "jupyterhub"
+c.SwarmSpawner.jupyterhub_service_name = "jupyterhub_jupyterhub"
 
 c.SwarmSpawner.start_timeout = 60 * 15
 
@@ -23,8 +23,11 @@ c.SwarmSpawner.dockerimages = [
 ]
 
 c.SwarmSpawner.container_spec = {
-    'args': ['/usr/local/bin/start-singleuser.sh'],
-    'env': {'JUPYTER_ENABLE_LAB': '1'}
+    'args': [
+        "/usr/local/bin/start-singleuser.sh",
+        "--ServerApp.ip=0.0.0.0",
+        "--ServerApp.port=8888",
+    ],
 }
 
 c.JupyterHub.authenticator_class = 'jhubauthenticators.DummyAuthenticator'

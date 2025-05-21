@@ -1,19 +1,17 @@
 services:
   jupyterhub:
     image: ucphhpc/jupyterhub:edge
-    build:
-      context: ./hub
-      dockerfile: Dockerfile
+    
     ports:
       - "80:8000/tcp"
     env_file:
       - .env
     volumes:
-      - ./hub/jupyterhub_config.py:/srv/jupyterhub/jupyter_config.py:ro
+      - ./hub/swarm_jupyterhub_config.py:/srv/jupyterhub/jupyter_config.py:ro
       - /var/run/docker.sock:/var/run/docker.sock:rw
     command: jupyterhub -f /srv/jupyterhub/jupyter_config.py
 
 networks:
   default:
     name: jupyterhub_default
-    driver: bridge
+    driver: overlay
