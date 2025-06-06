@@ -21,9 +21,6 @@ $(echo ${DOCKER_COMPOSE} >/dev/null)
 -include .env
 ARGS=
 
-.PHONY: all init dockerbuild dockerclean dockerpush clean dist distclean maintainer-clean
-.PHONY: install uninstall installcheck check
-
 .PHONY: all
 all: init dockerbuild
 
