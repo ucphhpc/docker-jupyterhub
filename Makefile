@@ -73,6 +73,5 @@ maintainer-clean: distclean
 	@echo 'This command is intended for maintainers to use; it'
 	@echo 'deletes files that may need special tools to rebuild.'
 
-.PHONY: 
-install:
-	$(MAKE) install-dep
+installtest:
+# PLACEHOLDER #
