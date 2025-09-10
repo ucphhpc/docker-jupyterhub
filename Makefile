@@ -73,5 +73,10 @@ maintainer-clean: distclean
 	@echo 'This command is intended for maintainers to use; it'
 	@echo 'deletes files that may need special tools to rebuild.'
 
+# TODO, implement
 installtest:
+# PLACEHOLDER #
+
+# TODO, implement
+test:
 # PLACEHOLDER #
