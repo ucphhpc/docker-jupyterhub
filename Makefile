@@ -78,5 +78,9 @@ installtest:
 # PLACEHOLDER #
 
 # TODO, implement
+uninstalltest:
+# PLACEHOLDER #
+
+# TODO, implement
 test:
 # PLACEHOLDER #
