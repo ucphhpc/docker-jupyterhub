@@ -1,8 +1,6 @@
-=============================
-docker-nbi-jupyterhub
-=============================
-.. image:: https://travis-ci.com/ucphhpc/docker-nbi-jupyterhub.svg?branch=master
-    :target: https://travis-ci.com/ucphhpc/docker-nbi-jupyterhub
+=================
+docker-jupyterhub
+=================
 
 .. image:: https://img.shields.io/docker/v/ucphhpc/jupyterhub
     :target: https://hub.docker.com/r/ucphhpc/jupyterhub
