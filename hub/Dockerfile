@@ -1,5 +1,5 @@
 # Extension of jupyterhub
-FROM jupyterhub/jupyterhub:5.3.0
+FROM jupyterhub/jupyterhub:5.4
 LABEL MAINTAINER="Rasmus Munk <rasmus.munk@di.ku.dk>"
 
 RUN apt-get update && apt-get install --no-install-recommends -yq \
