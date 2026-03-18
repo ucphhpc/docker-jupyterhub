@@ -30,10 +30,11 @@ pipelines:
     parameters:
       IMAGE: docker-jupyterhub
       SRC_DIRECTORY: docker-jupyterhub
-      BUILD_ARGS: ''
+      BUILD_MAKE_TARGET: 'all'
+      BUILD_MAKE_ARGS: ''
       TEST_DIRECTORY: docker-jupyterhub
-      TEST_ARGS: ''
       TEST_MAKE_TARGET: test
+      TEST_MAKE_ARGS: ''
       PUSH_DIRECTORY: publish-docker-scripts
       DEFAULT_TAG: latest
       COMMIT_TAG: GO_REVISION_DOCKER_JUPYTERHUB_GIT
