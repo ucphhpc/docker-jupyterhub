@@ -30,8 +30,8 @@ pipelines:
     parameters:
       IMAGE: docker-jupyterhub
       SRC_DIRECTORY: docker-jupyterhub
-      BUILD_MAKE_TARGET: 'all'
-      BUILD_MAKE_ARGS: ''
+      MAKE_BUILD_TARGET: 'all'
+      MAKE_BUILD_ARGS: ''
       TEST_DIRECTORY: docker-jupyterhub
       TEST_MAKE_TARGET: test
       TEST_MAKE_ARGS: ''
