@@ -6,7 +6,11 @@ updates:
       interval: "weekly"
       day: "monday"
     target-branch: "master"
+    allow:
+     - dependency-name: "production"
+       update-types:
+        - "version-update:semver-minor"
+        - "version-update:semver-patch"
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
-      - "docker"
