@@ -1,0 +1,34 @@
+name: Dependabot Pull Request
+on: pull_request
+jobs:
+  dependabot:
+    permissions:
+      pull-requests: read
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    steps:
+      - name: Fetch Dependabot metadata
+        id: dependabot-metadata
+        uses: dependabot/fetch-metadata@v3
+
+      - name: Extract Versions
+        run: |
+         # Extract current version from 1.gocd.yml
+          CURRENT_VERSION=$(grep -oP '[0-9]+\.[0-9]+\.[0-9]+' 1.gocd.yml)
+          NEW_VERSION=${{ steps.dependabot-metadata.outputs.new-version }}
+
+          echo "CURRENT_VERSION=${CURRENT_VERSION}" >> $GITHUB_ENV
+          echo "NEW_VERSION=${NEW_VERSION}" >> $GITHUB_ENV
+
+      - name: Increment Versions
+        run: |
+          if [[ "${CURRENT_VERSION}" != "${NEW_VERSION}" ]]; then
+          {
+            # Increment patch version
+            sed -i -e "s/${CURRENT_VERSION}/${NEW_VERSION}/g" 1.gocd.yml
+          } fi;
+      - name: Commit and Push Changes
+        run: |
+          git add 1.gocd.yml
+          git commit -m "chore: bump version for dependency updates"
+          git push
