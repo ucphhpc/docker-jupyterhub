@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "docker"
-    directory: "."
+    directory: "/hub"
     schedule:
       interval: "weekly"
       day: "monday"
@@ -15,7 +15,7 @@ updates:
     labels:
       - "dependencies"
   - package-ecosystem: "docker"
-    directory: "."
+    directory: "/hub"
     schedule:
       interval: "weekly"
       day: "monday"
