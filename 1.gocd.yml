@@ -38,5 +38,5 @@ pipelines:
       PUSH_DIRECTORY: publish-docker-scripts
       DEFAULT_TAG: latest
       COMMIT_TAG: GO_REVISION_DOCKER_JUPYTERHUB_GIT
-      EXTRA_TAG: 5.5.3
+      EXTRA_TAG: 5.5.4
     template: docker_image
